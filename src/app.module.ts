@@ -9,11 +9,7 @@ import { Todo } from './todo/entities/todo.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'admin123',
-      database: 'todoP2',
+      url: 'postgresql://postgres:eCcNvgBJFXNkQrFR5JEW@containers-us-west-151.railway.app:5466/railway',
       entities: [Todo],
       synchronize: true,
     }),
