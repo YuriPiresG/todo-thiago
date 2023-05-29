@@ -4,6 +4,7 @@ import { UpdateTodoDto } from './dto/update-todo.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Todo } from './entities/todo.entity';
+import { UpdateCompletion } from './dto/update-completion.dto';
 
 @Injectable()
 export class TodoService {
@@ -25,6 +26,10 @@ export class TodoService {
 
   update(id: number, updateTodoDto: UpdateTodoDto) {
     return this.todoRepository.update(id, updateTodoDto);
+  }
+
+  updateCompletion(id: number, updateCompletion: UpdateCompletion) {
+    return this.todoRepository.update(id, updateCompletion);
   }
 
   remove(id: number) {
